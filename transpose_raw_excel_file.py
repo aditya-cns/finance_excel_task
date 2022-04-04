@@ -41,7 +41,7 @@ class SaasRevenueTransposer:
         """Itemize the customer details into a dataframe"""
         df1 = pd.read_excel(self.file_name)
         df3 = df1.iloc[: , 0:6]
-        total_dates = 20
+        total_dates = len(self.date_price_dict.keys())
         output_df = pd.concat([df3] * total_dates, ignore_index=True)
         self.customer_details_df = output_df
         
